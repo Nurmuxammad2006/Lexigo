@@ -75,6 +75,7 @@ function openCropper(file, aspectRatio, targetImg) {
 
         setTimeout(() => {
             cropper = new Cropper(cropImage, {
+                
                 aspectRatio: aspectRatio,
                 viewMode: 0, 
                 dragMode: 'move',      
