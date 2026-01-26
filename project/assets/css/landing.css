@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 100px 0;
+    background-image: url('../images/avatars/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.hero .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.hero h2 {
+    text-align: left !important;
+    width: 350px;
+    font-size: 50px;
+    /* text-transform: uppercase; */
+    margin-bottom: 16px;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    font-size: 48px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    width: 450px;
+    text-align: left !important;
+    margin-bottom: 24px;
+    font-size: 18px;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+.right {
+    /* background-image: url('../../project/assets/images/hero-image.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 🔥 fixes button */
+}
+
+.hero-section-image {
+    width: 500px;
+    height: auto;
+    border-radius: 50px;
+}
+
+
+/* ========= FEATURES ========== */
+.features {
+    padding: 100px 0;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    font-size: 38px;
+    letter-spacing: 1px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+
+/*========== FEATURE CARD STYLES ==========*/
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  border-radius: 24px;
+  line-height: 1.6;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 36px;
+  border-radius: 22px;
+  color: #ffffff;
+  overflow: hidden;
+  background: #0a3cff;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content::before {
+  position: absolute;
+  content: "";
+  top: -4%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%);
+  background: #ced8ff;
+  z-index: -1;
+  transform-origin: bottom;
+
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content::after {
+  position: absolute;
+  content: "";
+  top: -8%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%);
+  background: #e7ecff;
+  z-index: -2;
+  transform-origin: bottom;
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content svg {
+  width: 48px;
+  height: 48px;
+}
+
+.content .para {
+  z-index: 1;
+  opacity: 1;
+  font-size: 18px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .link {
+  z-index: 1;
+  color: #fea000;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .link:hover {
+  text-decoration: underline;
+}
+
+.card:hover {
+  transform: translate(0px, -16px);
+}
+
+.card:hover .content::before {
+  rotate: -8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .content::after {
+  rotate: 8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ========== ABOUT SECTION ========== */
+
+.about {
+    padding: 100px 0;
+    background-image: url('../images/avatars/about-us-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.about-left .about-us-section {
+    width: 100%;
+    height: 500px;
+    max-width: 700px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.about-right h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #fff;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+.about-right p {
+    width: 500px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ffffff;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+
+/*========== CONTACT SECTION ==========*/
+
+.contact {
+    min-height: 700px;
+    /* background-color: #ffffff; */
+    /* color: #fff; */
+    padding: 80px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+/* LEFT */
+.contact-left h2 {
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: black;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+    font-size: 48px;
+    letter-spacing: 1px;
+}
+
+.contact-left p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: black;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+
+.subtitle {
+    font-size: 16px;
+    color: #cfcfcf;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    padding: 12px 0;
+    margin-bottom: 30px;
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    background: #6f6f6f;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* RIGHT */
+.contact-right {
+    margin-top: 180px;
+}
+
+.info {
+    margin-bottom: 40px;
+}
+
+.info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+.info p {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;   /* 👈 this is the THIN style */
+    letter-spacing: 1px;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+/*========== FOOTER ==========*/
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0;
+    border-top: none;
+}

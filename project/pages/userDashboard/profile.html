@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Startup</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Crop JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Profile</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="profile.html" class="active">Profile</a>
+            <a href="dashboard.html">MyResult</a>
+            <a href="sessions.html">Sessions</a>
+            <a href="upcoming_events.html">Upcoming</a>
+            <a href="chat.html">Chat</a>
+            <a href="settings.html">Settings</a>
+            <a href="../auth/login.html">Log out</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+    <!-- ===== PROFILE CARD ===== -->
+        <div class="profile-card">
+
+            <!-- COVER -->
+            <div class="profile-cover">
+                <img id="coverImage"
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+                <button class="edit-cover-btn" id="editCoverBtn">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+
+                <input type="file" id="coverInput" hidden accept="image/*">
+            </div>
+
+            <!-- BODY -->
+            <div class="profile-body">
+                <div class="profile-header">
+
+                    <!-- AVATAR -->
+                    <div class="avatar-wrapper">
+                        <div class="avatar">
+                            <img id="avatarImage" src="https://i.pravatar.cc/300">
+                        </div>
+
+                        <button class="edit-avatar-btn" id="editAvatarBtn">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
+                        
+                        <input type="file" id="avatarInput" hidden accept="image/*">
+                    </div>
+                    
+                    <!-- INFO -->
+                    <div class="profile-info">
+                        <input id="nameInput" value="Henrie Ekemezie" disabled>
+                        <input id="roleInput" value="Web & UI/UX Designer" disabled>
+                        
+                        <textarea id="bioInput" rows="2" disabled>Passionate designer focused on clean user experiences.
+                        </textarea>
+                    </div>
+
+                    <!-- ACTIONS -->
+                    <div class="tools">
+                        <button id="editBtn">Edit Profile</button>
+                        <button id="saveBtn">Save</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="crop-modal" id="cropModal">
+            <div class="crop-box">
+                <div class="crop-main-container">
+                    <div class="img-container">
+                        <img id="cropImage">
+                    </div>
+                </div>
+
+        <div class="crop-actions">
+            <div class="zoom-controls" style="margin-right: auto;">
+                <button type="button" id="zoomIn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" id="zoomOut" title="Zoom Out"><i class="fa-solid fa-minus"></i></button>
+            </div>
+            <button id="cancelCrop">Cancel</button>
+            <button id="applyCrop">Apply</button>
+        </div>
+            </div>
+        </div>       
+        <!-- ===== REGISTERED SESSIONS ===== -->
+        <section class="registered-sessions">
+            
+            <h3>Registered Sessions</h3>
+            
+            <div class="session-table">
+                
+                <div class="session-row header">
+                    <span>Name</span>
+                    <span>Time</span>
+                    <span>Status</span>
+                </div>
+
+                <div class="session-row">
+                    <span>Weekly mock test from English Life</span>
+                    <span>4 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <span>Mock test from English with TIM</span>
+                    <span>8 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <span>Weekly mock test from Webster</span>
+                    <span>12 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+</div>
+
+
+<!-- <script src="../../assets/js/dashboard.js"></script> -->
+</body>
+</html>

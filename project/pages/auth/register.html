@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | LEXIGO</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/landing.css">
+    <link rel="stylesheet" href="../../assets/css/auth-page.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="container">
+            <div class="company-logo">
+                <h1>LEXIGO</h1>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="/project/landing.html">Home</a></li>
+                    <li><a href="/project/landing.html#features">Features</a></li>
+                    <li><a href="/project/landing.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= REGISTER ================= -->
+
+    <section class="contact">
+        <div class="auth-container">
+            <h2 style="text-align:center;">Create Account</h2>
+
+            <form class="register-form" id="registerForm" novalidate>
+                <!-- Firstname and Lastname on the same line -->
+                <div class="name-row">
+                    <input type="text" placeholder="Firstname" required>
+                    <input type="text" placeholder="Lastname" required>
+                </div>
+
+                <input type="email" placeholder="Email" required>
+
+                <!-- Password field with eye icon -->
+                <div class="password-wrapper">
+                    <input type="password" id="password" placeholder="Password" required class="password-input">
+                    <i class="fa-regular fa-eye-slash toggle-password" aria-hidden="true"></i>
+                </div>
+
+                <!-- Confirm password field with eye icon + error message below -->
+                <div class="password-wrapper">
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required class="password-input">
+                    <i class="fa-regular fa-eye-slash toggle-password" aria-hidden="true"></i>
+                </div>
+                <p class="error-message" id="passwordError"></p>
+
+                <a href="email-confirmation/confirm-email-password.html" class="btn btn-primary">Register</a>
+
+                <p style="text-align:center;">
+                    Already have an account?
+                    <a href="login.html" style="color: var(--primary); font-weight: 600;">
+                        Login
+                    </a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/auth-page.js"></script>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 LEXIGO. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

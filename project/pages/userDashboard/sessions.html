@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions | Startup</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>Sessions</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="profile.html">Profile</a>
+            <a href="dashboard.html">My Result</a>
+            <a href="sessions.html" class="active">Sessions</a>
+            <a href="upcoming_events.html">Upcoming Events</a>
+            <a href="chat.html">Chat</a>
+            <a href="settings.html">Settings</a>
+            <a href="../auth/login.html">Logout</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+        <!-- ===== SEARCH BAR ===== -->
+        <div class="session-search">
+            <input type="text" placeholder="Search IELTS sessions or mock tests...">
+        </div>
+
+        <!-- ===== FILTERS ===== -->
+        <div class="session-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="live">Live</button>
+            <button class="filter-btn" data-filter="mock">Mock</button>
+            <button class="filter-btn" data-filter="speaking">Speaking</button>
+            <button class="filter-btn" data-filter="writing">Writing</button>
+            <button class="filter-btn" data-filter="reading">Reading</button>
+            <button class="filter-btn" data-filter="listening">Listening</button>
+        </div>
+
+        <!-- ===== SESSION GRID ===== -->
+        <section class="session-grid">
+
+            <!-- CARD -->
+            <div class="session-card" data-type="live" data-skill="speaking">
+                <div class="session-badge live">LIVE</div>
+                <h3>IELTS Speaking – Live Practice</h3>
+                <p>Real-time speaking session with instructor</p>
+                <span class="session-tag">Speaking</span>
+            </div>
+
+            <div class="session-card" data-type="mock" data-skill="full">
+                <div class="session-badge mock">MOCK</div>
+                <h3>IELTS Full Mock Test</h3>
+                <p>Listening, Reading, Writing & Speaking</p>
+                <span class="session-tag">Full Test</span>
+            </div>
+
+            <div class="session-card" data-type="live" data-skill="writing">
+                <div class="session-badge live">LIVE</div>
+                <h3>IELTS Writing Task 2</h3>
+                <p>Essay correction + live feedback</p>
+                <span class="session-tag">Writing</span>
+            </div>
+
+            <div class="session-card" data-type="mock" data-skill="listening">
+                <div class="session-badge mock">MOCK</div>
+                <h3>IELTS Listening Practice</h3>
+                <p>Exam-style listening questions</p>
+                <span class="session-tag">Listening</span>
+            </div>
+
+            <div class="session-card" data-type="live" data-skill="reading">
+                <div class="session-badge live">LIVE</div>
+                <h3>IELTS Reading Strategies</h3>
+                <p>Time management & question types</p>
+                <span class="session-tag">Reading</span>
+            </div>
+
+            <div class="session-card" data-type="mock" data-skill="speaking">
+                <div class="session-badge mock">MOCK</div>
+                <h3>IELTS Speaking Mock Interview</h3>
+                <p>Band score + feedback</p>
+                <span class="session-tag">Speaking</span>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>
