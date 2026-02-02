@@ -403,8 +403,6 @@
     cursor: pointer;
 }
 
-
-
 /* ================= 
 CHAT PAGE
 ================= */
@@ -434,7 +432,6 @@ CHAT PAGE
     border: 1px solid #cbd5f5;
     margin-bottom: 12px;
 }
-
 
 .chat-user {
     display: flex;
