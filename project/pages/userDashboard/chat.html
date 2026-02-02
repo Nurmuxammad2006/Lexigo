@@ -18,180 +18,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-<!-- <div class="dashboard-layout"> -->
-
-    <!-- ===== SIDEBAR ===== -->
-    <!-- <aside class="sidebar">
-        <div class="sidebar-logo">
-            <h2>Chat</h2>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="profile.html">Profile</a>
-            <a href="dashboard.html">My Result</a>
-            <a href="sessions.html">Sessions</a>
-            <a href="upcoming_events.html">Upcoming</a>
-            <a href="chat.html" class="active">Chat</a>
-            <a href="settings.html">Settings</a>
-            <a href="../auth/login.html">Logout</a>
-        </nav>
-    </aside> -->
-
-    <!-- ===== CHAT LAYOUT abc ===== -->
-    <!-- <main class="dashboard-content chat-layout"> -->
-
-        <!-- ===== CONTACT LIST ===== -->
-        <!-- <aside class="chat-list">
-            <h3>UserName</h3>
-
-            <div class="chat-search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                    type="text"
-                    class="chat-search"
-                    placeholder="Search..."
-                >
-            </div>
-
-            <div class="chat-user active">
-                <img src="../../assets/images/avatars/default-avatar.jpg" alt="">
-                <div>
-                    <strong>Student 1</strong>
-                    <p>Last message preview</p>
-                </div>
-            </div>
-
-            <div class="chat-user">
-                <img src="../../assets/images/avatars/default-avatar.jpg" alt="">
-                <div>
-                    <strong>Student 2</strong>
-                    <p>Last message preview</p>
-                </div>
-            </div>
-
-            <div class="chat-user">
-                <img src="../../assets/images/avatars/default-avatar.jpg" alt="Instructor">
-                <div>
-                    <strong>Instructor</strong>
-                    <p>Last message preview</p>
-                </div>
-            </div>
-        </aside> -->
-
-        <!-- ===== CHAT WINDOW ===== -->
-        <!-- <section class="chat-window"> -->
-
-            <!-- HEADER -->
-            <!-- <div class="chat-header" data-chat-id="77">
-
-                <div class="chat-user-info">
-                    <img src="../../assets/images/avatars/default-avatar.jpg" alt="">
-                    <span>Instructor</span>
-                </div>
-
-                <div class="chat-actions">
-                    <i class="fa-solid fa-ellipsis-vertical more-chat"></i>
-
-                    <div class="chat-menu">
-                        <div class="chat-menu-item alert-chat">
-                            <i class="fa-solid fa-circle-exclamation"></i>
-                            <span>Alert</span>
-                        </div>
-
-                        <div class="chat-menu-item edit-chat">
-                            <i class="fa-solid fa-pen"></i>
-                            <span>Edit</span>
-                        </div>
-
-                        <div class="chat-menu-item delete-chat danger">
-                            <i class="fa-solid fa-trash"></i>
-                            <span>Delete</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div> -->
-
-            <!-- ✅ MESSAGES WRAPPER -->
-            <!-- <div class="chat-messages">
-                <div class="message received">
-                    <p class="message-text">Hello, are you ready for the IELTS session?</p>
-                    <span class="message-time">09:41</span>
-                </div>
-
-                <div class="message sent" data-message-id="123">
-                    <p class="message-text">Yes, I’m ready 👍</p>
-
-                    <div class="message-actions">
-                        <i class="fa-solid fa-pen edit-message"></i>
-                        <i class="fa-solid fa-trash delete-message"></i>
-                    </div>
-
-                    <span class="message-time">09:42</span>
-                </div>
-
-            </div> -->
-
-            <!-- ✅ INPUT STAYS INSIDE CHAT WINDOW -->
-            <!-- <div class="chat-input">
-                <input type="text" placeholder="Text..." id="chatInput">
-                <button id="sendMessage">Send</button>
-            </div>
-
-        </section>
-
-    </main>
-</div> -->
-
-
-<div class="dashboard-layout">
-    <aside class="sidebar">
-        <div class="sidebar-logo"><h2>Chat</h2></div>
-        <nav class="sidebar-nav">
-            <a href="profile.html">Profile</a>
-            <a href="dashboard.html">My Result</a>
-            <a href="sessions.html">Sessions</a>
-            <a href="upcoming_events.html">Upcoming</a>
-            <a href="#" class="active">Chat</a>
-            <a href="settings.html">Settings</a>
-            <a href="../auth/login.html">Log out</a>
-        </nav>
-    </aside>
-    <main class="chat-layout">
-        <aside class="chat-list">
-            <div class="chat-list-header">
-                <h3>UserName</h3>
-                <div class="chat-search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" class="chat-search" id="chatSearch" placeholder="Search...">
-                </div>
-            </div>
-            <div class="chat-list-scroll" id="contactList"></div>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-logo"><h2>Chat</h2></div>
+            <nav class="sidebar-nav">
+                <a href="profile.html">Profile</a>
+                <a href="dashboard.html">My Result</a>
+                <a href="sessions.html">Sessions</a>
+                <a href="upcoming_events.html">Upcoming</a>
+                <a href="#" class="active">Chat</a>
+                <a href="settings.html">Settings</a>
+                <a href="../auth/login.html">Log out</a>
+            </nav>
         </aside>
-        <section class="chat-window">
-            <div class="chat-header" id="chatHeader" data-chat-id="">
-                <div class="chat-user-info">
-                    <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
-                    <span id="headerName">—</span>
-                </div>
-                <div class="chat-actions">
-                    <i class="fa-solid fa-ellipsis-vertical more-chat" id="moreBtn"></i>
-                    <div class="chat-menu" id="chatMenu">
-                        <div class="chat-menu-item alert-chat"><i class="fa-solid fa-circle-exclamation"></i><span>Alert</span></div>
-                        <div class="chat-menu-item edit-chat"><i class="fa-solid fa-pen"></i><span>Edit</span></div>
-                        <div class="chat-menu-item delete-chat danger"><i class="fa-solid fa-trash"></i><span>Delete</span></div>
+        <main class="chat-layout">
+            <aside class="chat-list">
+                <div class="chat-list-header">
+                    <h3>UserName</h3>
+                    <div class="chat-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="chat-search" id="chatSearch" placeholder="Search...">
                     </div>
                 </div>
-            </div>
-            <div class="chat-messages" id="chatMessages"></div>
-            <div class="chat-input">
-                <input type="text" placeholder="Text..." id="chatInput">
-                <button id="sendMessage">Send</button>
-            </div>
-        </section>
-    </main>
-</div>
-<script src="../../assets/js/dashboard/chat.js"></script>
+                <div class="chat-list-scroll" id="contactList"></div>
+            </aside>
+            <section class="chat-window">
+                <div class="chat-header" id="chatHeader" data-chat-id="">
+                    <div class="chat-user-info">
+                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
+                        <span id="headerName">—</span>
+                    </div>
+                    <div class="chat-actions">
+                        <i class="fa-solid fa-ellipsis-vertical more-chat" id="moreBtn"></i>
+                        <div class="chat-menu" id="chatMenu">
+                            <div class="chat-menu-item alert-chat"><i class="fa-solid fa-circle-exclamation"></i><span>Alert</span></div>
+                            <div class="chat-menu-item edit-chat"><i class="fa-solid fa-pen"></i><span>Edit</span></div>
+                            <div class="chat-menu-item delete-chat danger"><i class="fa-solid fa-trash"></i><span>Delete</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Text..." id="chatInput">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <button id="sendMessage">Send</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../../assets/js/dashboard/chat.js"></script>
 </body>
 </html>

@@ -2,16 +2,7 @@
         body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#333;height:100vh;overflow:hidden}
         .dashboard-layout{display:flex;height:100vh}
 
-        /* SIDEBAR */
-        /* .sidebar{width:220px;background:#1a1f2e;display:flex;flex-direction:column;flex-shrink:0}
-        .sidebar-logo{padding:28px 24px 22px;border-bottom:1px solid rgba(255,255,255,0.07)}
-        .sidebar-logo h2{font-size:1.25rem;font-weight:700;color:#fff}
-        .sidebar-nav{display:flex;flex-direction:column;padding:10px 0;flex:1}
-        .sidebar-nav a{color:#8b93a7;text-decoration:none;padding:11px 24px;font-size:.88rem;font-weight:500;transition:color .2s;position:relative}
-        .sidebar-nav a:hover{color:#fff}
-        .sidebar-nav a.active{color:#4a7cff}
-        .sidebar-nav a.active::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:2px;background:#4a7cff;border-radius:1px} */
-
+        
         /* CHAT LAYOUT */
         .chat-layout{display:flex;flex:1;overflow:hidden;padding:18px;gap:16px}
 
