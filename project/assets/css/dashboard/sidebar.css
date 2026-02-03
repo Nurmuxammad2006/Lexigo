@@ -1,76 +1,38 @@
-/* =========================
-   SIDEBAR
-========================= */
-.sidebar {
-    width: 320px;
-    min-height: 100vh;
-    padding: 32px 24px;
-    display: flex;
-    flex-direction: column;
-    background: #0d1117;
-    border-right: 1px solid #30363d;
-    color: #c9d1d9;
-    position: sticky;
-    top: 0;
-} 
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#333;height:100vh;overflow:hidden}
+.dashboard-layout{display:flex;height:100vh}
 
-.sidebar-logo {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #30363d;
+.sidebar{
+    width:220px;
+    background:#1a1f2e;
+    color:#fff;
+    padding:24px 0;
+    flex-shrink:0
 }
-
-.sidebar-logo h2 {
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: #f0f6fc;
-    margin-bottom: 4px;
-    letter-spacing: 0;
+.sidebar-logo{
+    padding:0 20px 24px;
+    border-bottom:1px solid rgba(255,255,255,.1)
 }
-
-.sidebar-logo p {
-    font-size: 14px;
-    color: #8b949e;
-    margin: 0;
+.sidebar-logo h2{
+    font-size:1.3rem;
+    font-weight:700
 }
-
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 32px;
+.sidebar-nav{
+    padding:16px 0
 }
-
-.sidebar-nav a {
-    color: #c9d1d9;
-    padding: 12px 0;
-    border-radius: 0;
-    font-weight: 500;
-    transition: color 0.2s ease;
-    text-decoration: none;
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 14px;
-    letter-spacing: 0;
-    border-bottom: 1px solid transparent;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-} 
-
-.sidebar-nav a:hover {
-    color: #58a6ff;
+.sidebar-nav a{
+    display:block;
+    padding:12px 20px;
+    color:rgba(255,255,255,.7);
+    text-decoration:none;
+    font-size:.9rem;
+    transition:all .2s
 }
-
-.sidebar-nav a.active {
-    color: #58a6ff;
-    border-bottom: 1px solid #58a6ff;
+.sidebar-nav a:hover{
+    background:rgba(255,255,255,.05);
+    color:#fff
 }
-
-/* =========================
-   MAIN CONTENT
-========================= */
-.dashboard-content {
-    flex: 1;
-    padding: 32px;
+.sidebar-nav a.active{
+    background:#4a7cff;
+    color:#fff
 }

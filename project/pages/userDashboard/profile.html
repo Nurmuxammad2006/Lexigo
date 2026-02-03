@@ -23,151 +23,139 @@
 <body>
 
 <div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar">
-            <div class="sidebar-logo"><h2>💬 Chat</h2></div>
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-user"></i> Profile</h2></div>
             <nav class="sidebar-nav">
-                <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
-                <a href="#"><i class="fa-solid fa-chart-line"></i> My Result</a>
-                <a href="#"><i class="fa-solid fa-calendar"></i> Sessions</a>
-                <a href="#"><i class="fa-solid fa-clock"></i> Upcoming</a>
-                <a href="#" class="active"><i class="fa-solid fa-message"></i> Chat</a>
-                <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
-                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+                <a href="#" class="active"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
             </nav>
         </aside>
-        <main class="chat-layout">
-            <aside class="chat-list">
-                <div class="chat-list-header">
-                    <h3>Conversations</h3>
-                    
-                    <!-- New Action Buttons -->
-                    <div class="header-actions">
-                        <button id="searchUsersBtn">
-                            <i class="fa-solid fa-globe"></i> Search
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+    <!-- ===== PROFILE CARD ===== -->
+        <div class="profile-card">
+
+            <!-- COVER -->
+            <div class="profile-cover">
+                <img id="coverImage"
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+                <button class="edit-cover-btn" id="editCoverBtn">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </button>
+
+                <input type="file" id="coverInput" hidden accept="image/*">
+            </div>
+
+            <!-- BODY -->
+            <div class="profile-body">
+                <div class="profile-header">
+
+                    <!-- AVATAR -->
+                    <div class="avatar-wrapper">
+                        <div class="avatar">
+                            <img id="avatarImage" src="https://i.pravatar.cc/300">
+                        </div>
+
+                        <button class="edit-avatar-btn" id="editAvatarBtn">
+                            <i class="fa-regular fa-pen-to-square"></i>
                         </button>
-                        <button id="createGroupBtn">
-                            <i class="fa-solid fa-users"></i> Group
-                        </button>
+                        
+                        <input type="file" id="avatarInput" hidden accept="image/*">
                     </div>
                     
-                    <div class="chat-search-box">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="chat-search" id="chatSearch" placeholder="Search...">
+                    <!-- INFO -->
+                    <div class="profile-info">
+                        <input id="nameInput" value="Henrie Ekemezie" disabled>
+                        <input id="roleInput" value="Web & UI/UX Designer" disabled>
+                        
+                        <textarea id="bioInput" rows="2" disabled>Passionate designer focused on clean user experiences.
+                        </textarea>
+                    </div>
+
+                    <!-- ACTIONS -->
+                    <div class="tools">
+                        <button id="editBtn">Edit Profile</button>
+                        <button id="saveBtn">Save</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="crop-modal" id="cropModal">
+            <div class="crop-box">
+                <div class="crop-main-container">
+                    <div class="img-container">
+                        <img id="cropImage">
                     </div>
                 </div>
-                <div class="chat-list-scroll" id="contactList"></div>
-            </aside>
+
+        <div class="crop-actions">
+            <div class="zoom-controls" style="margin-right: auto;">
+                <button type="button" id="zoomIn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
+                <button type="button" id="zoomOut" title="Zoom Out"><i class="fa-solid fa-minus"></i></button>
+            </div>
+            <button id="cancelCrop">Cancel</button>
+            <button id="applyCrop">Apply</button>
+        </div>
+            </div>
+        </div>       
+        <!-- ===== REGISTERED SESSIONS ===== -->
+        <section class="registered-sessions">
             
-            <section class="chat-window">
-                <div class="chat-header" id="chatHeader" data-chat-id="">
-                    <div class="chat-user-info">
-                        <div class="avatar-wrap">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="details">
-                            <span id="headerName">—</span>
-                            <small id="onlineStatus"></small>
-                        </div>
-                    </div>
-                    <div class="chat-actions">
-                        <i class="fa-solid fa-ellipsis-vertical more-chat" id="moreBtn"></i>
-                        <div class="chat-menu" id="chatMenu">
-                            <div class="chat-menu-item alert-chat">
-                                <i class="fa-solid fa-circle-exclamation"></i>
-                                <span>Alert</span>
-                            </div>
-                            <div class="chat-menu-item edit-chat">
-                                <i class="fa-solid fa-pen"></i>
-                                <span>Edit</span>
-                            </div>
-                            <div class="chat-menu-item delete-chat danger">
-                                <i class="fa-solid fa-trash"></i>
-                                <span>Delete</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h3>Registered Sessions</h3>
+            
+            <div class="session-table">
                 
-                <div class="chat-messages" id="chatMessages"></div>
-                
-                <!-- Enhanced Input with File Upload, Emoji, and Send Icon -->
-                <div class="chat-input">
-                    <!-- Emoji Picker -->
-                    <div class="emoji-picker" id="emojiPicker">
-                        <div class="emoji-picker-header">Select Emoji</div>
-                        <div class="emoji-grid" id="emojiGrid"></div>
-                    </div>
-                    
-                    <div class="input-actions">
-                        <button class="input-action-btn" id="emojiBtn" title="Add emoji">
-                            <i class="fa-solid fa-face-smile"></i>
-                        </button>
-                        <button class="input-action-btn" onclick="document.getElementById('fileInput').click()" title="Attach file">
-                            <i class="fa-solid fa-paperclip"></i>
-                        </button>
-                        <input type="file" id="fileInput" accept="*/*">
-                    </div>
-                    
-                    <input type="text" placeholder="Type a message..." id="chatInput">
-                    
-                    <!-- Send Icon Button -->
-                    <button class="send-btn" id="sendBtn" title="Send message">
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
+                <div class="session-row header">
+                    <span>Name</span>
+                    <span>Time</span>
+                    <span>Status</span>
                 </div>
-            </section>
-        </main>
-    </div>
 
-    <!-- Search Users Worldwide Modal -->
-    <div class="modal" id="searchModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>🌍 Search Users Worldwide</h3>
-                <button class="modal-close" id="closeSearchModal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Search by name or country</label>
-                    <input type="text" id="globalSearch" placeholder="Type to search...">
+                <div class="session-row">
+                    <span>Weekly mock test from English Life</span>
+                    <span>4 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
                 </div>
-                <div class="user-search-results" id="searchResults"></div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Create Group Chat Modal -->
-    <div class="modal" id="groupModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>👥 Create Group Chat</h3>
-                <button class="modal-close" id="closeGroupModal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+                <div class="session-row">
+                    <span>Mock test from English with TIM</span>
+                    <span>8 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <span>Weekly mock test from Webster</span>
+                    <span>12 September 10:30</span>
+                    <div>
+                        <button class="btn-join">Join</button>
+                        <button class="btn-cancel">Cancel</button>
+                    </div>
+                </div>
+
             </div>
-            <form id="createGroupForm">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Group Name</label>
-                        <input type="text" id="groupName" placeholder="Enter group name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Select Members (at least 2)</label>
-                        <div class="user-search-results" id="availableUsers"></div>
-                    </div>
-                    
-                    <div class="selected-users" id="selectedUsers"></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-cancel" onclick="closeModal('groupModal')">Cancel</button>
-                    <button type="submit" class="btn-primary">Create Group</button>
-                </div>
-            </form>
-        </div>
-    </div>
+        </section>
+
+    </main>
+    
+</div>
 
 
 <script src="../../assets/js/dashboard/profile.js"></script>

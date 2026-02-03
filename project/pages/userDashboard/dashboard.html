@@ -8,6 +8,10 @@
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- JavaScript -->
     <script defer src="../../assets/js/dashboard.js"></script>
 </head>
@@ -16,21 +20,18 @@
 <div class="dashboard-layout">
 
     <!-- ===== SIDEBAR ===== -->
-    <aside class="sidebar">
-        <div class="sidebar-logo">
-            <h2>My Result</h2> 
-        </div>
-
-        <nav class="sidebar-nav">
-            <a href="profile.html">Profile</a>
-            <a href="dashboard.html" class="active">My Result</a>
-            <a href="sessions.html">Sessions</a>
-            <a href="upcoming_events.html">Upcoming</a>
-            <a href="chat.html">Chat</a>
-            <a href="settings.html">Settings</a>
-            <a href="../auth/login.html">Log out</a>
-        </nav>
-    </aside>
+        <aside class="sidebar">
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-chart-line"></i> My Results</h2></div>
+            <nav class="sidebar-nav">
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="#" class="active"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+            </nav>
+        </aside>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="dashboard-content">

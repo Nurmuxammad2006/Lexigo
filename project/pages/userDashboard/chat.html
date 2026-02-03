@@ -3,38 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat | Startup</title>
+    <title>Profile | Startup</title>
 
     <!-- Dashboard CSS -->
     <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
-    <link rel="stylesheet" href="../../assets/css/dashboard/chat.css">
     <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
-
+    <link rel="stylesheet" href="../../assets/css/dashboard/chat.css">
     <!-- JavaScript -->
     <script defer src="../../assets/js/dashboard.js"></script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Crop JavaScript -->
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+
 </head>
 <body>
-    <div class="dashboard-layout">
+
+<div class="dashboard-layout">
         <aside class="sidebar">
-            <div class="sidebar-logo"><h2>Chat</h2></div>
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-message"></i> Chat</h2></div>
             <nav class="sidebar-nav">
-                <a href="profile.html">Profile</a>
-                <a href="dashboard.html">My Result</a>
-                <a href="sessions.html">Sessions</a>
-                <a href="upcoming_events.html">Upcoming</a>
-                <a href="#" class="active">Chat</a>
-                <a href="settings.html">Settings</a>
-                <a href="../auth/login.html">Log out</a>
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="#" class="active"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
             </nav>
         </aside>
         <main class="chat-layout">
             <aside class="chat-list">
                 <div class="chat-list-header">
-                    <h3>UserName</h3>
+                    <h3>Conversations</h3>
+                    
+                    <!-- New Action Buttons -->
+                    <div class="header-actions">
+                        <button id="searchUsersBtn">
+                            <i class="fa-solid fa-globe"></i> Search
+                        </button>
+                        <button id="createGroupBtn">
+                            <i class="fa-solid fa-users"></i> Group
+                        </button>
+                    </div>
+                    
                     <div class="chat-search-box">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" class="chat-search" id="chatSearch" placeholder="Search...">
@@ -42,30 +57,119 @@
                 </div>
                 <div class="chat-list-scroll" id="contactList"></div>
             </aside>
+            
             <section class="chat-window">
                 <div class="chat-header" id="chatHeader" data-chat-id="">
                     <div class="chat-user-info">
-                        <div class="avatar-wrap"><i class="fa-solid fa-user"></i></div>
-                        <span id="headerName">—</span>
+                        <div class="avatar-wrap">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="details">
+                            <span id="headerName">—</span>
+                            <small id="onlineStatus"></small>
+                        </div>
                     </div>
                     <div class="chat-actions">
                         <i class="fa-solid fa-ellipsis-vertical more-chat" id="moreBtn"></i>
                         <div class="chat-menu" id="chatMenu">
-                            <div class="chat-menu-item alert-chat"><i class="fa-solid fa-circle-exclamation"></i><span>Alert</span></div>
-                            <div class="chat-menu-item edit-chat"><i class="fa-solid fa-pen"></i><span>Edit</span></div>
-                            <div class="chat-menu-item delete-chat danger"><i class="fa-solid fa-trash"></i><span>Delete</span></div>
+                            <div class="chat-menu-item alert-chat">
+                                <i class="fa-solid fa-circle-exclamation"></i>
+                                <span>Alert</span>
+                            </div>
+                            <div class="chat-menu-item edit-chat">
+                                <i class="fa-solid fa-pen"></i>
+                                <span>Edit</span>
+                            </div>
+                            <div class="chat-menu-item delete-chat danger">
+                                <i class="fa-solid fa-trash"></i>
+                                <span>Delete</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="chat-messages" id="chatMessages"></div>
+                
+                <!-- Enhanced Input with File Upload, Emoji, and Send Icon -->
                 <div class="chat-input">
-                    <input type="text" placeholder="Text..." id="chatInput">
-                    <i class="fa-regular fa-face-smile"></i>
-                    <button id="sendMessage">Send</button>
+                    <!-- Emoji Picker -->
+                    <div class="emoji-picker" id="emojiPicker">
+                        <div class="emoji-picker-header">Select Emoji</div>
+                        <div class="emoji-grid" id="emojiGrid"></div>
+                    </div>
+                    
+                    <div class="input-actions">
+                        <button class="input-action-btn" id="emojiBtn" title="Add emoji">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </button>
+                        <button class="input-action-btn" onclick="document.getElementById('fileInput').click()" title="Attach file">
+                            <i class="fa-solid fa-paperclip"></i>
+                        </button>
+                        <input type="file" id="fileInput" accept="*/*">
+                    </div>
+                    
+                    <input type="text" placeholder="Type a message..." id="chatInput">
+                    
+                    <!-- Send Icon Button -->
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
                 </div>
             </section>
         </main>
     </div>
-    <script src="../../assets/js/dashboard/chat.js"></script>
+
+    <!-- Search Users Worldwide Modal -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🌍 Search Users Worldwide</h3>
+                <button class="modal-close" id="closeSearchModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Search by name or country</label>
+                    <input type="text" id="globalSearch" placeholder="Type to search...">
+                </div>
+                <div class="user-search-results" id="searchResults"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Group Chat Modal -->
+    <div class="modal" id="groupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>👥 Create Group Chat</h3>
+                <button class="modal-close" id="closeGroupModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="createGroupForm">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Group Name</label>
+                        <input type="text" id="groupName" placeholder="Enter group name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Select Members (at least 2)</label>
+                        <div class="user-search-results" id="availableUsers"></div>
+                    </div>
+                    
+                    <div class="selected-users" id="selectedUsers"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" onclick="closeModal('groupModal')">Cancel</button>
+                    <button type="submit" class="btn-primary">Create Group</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<script src="../../assets/js/dashboard/chat.js"></script>
 </body>
 </html>
