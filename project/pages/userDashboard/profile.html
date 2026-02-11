@@ -15,9 +15,11 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Crop JavaScript -->
-    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
-    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+     <!-- Crop JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
 
 </head>
 <body>
@@ -38,126 +40,97 @@
             </nav>
         </aside>
 
-    <!-- ===== MAIN CONTENT ===== -->
+    <!-- ===== MAIN CONTENT  Profile card ===== -->
     <main class="dashboard-content">
+    <div class="profile-card">
+        <!-- COVER SECTION (background set via fetch) -->
+        <div class="cover-section" id="coverSection">
+            <button class="cover-corner-btn" id="coverCornerBtn" title="Change & crop cover">
+                <i class="fas fa-pen"></i>
+            </button>
+        </div>
 
-    <!-- ===== PROFILE CARD ===== -->
-        <div class="profile-card">
+        <!-- hidden file inputs -->
+        <input type="file" id="coverUpload" class="hidden-input" accept="image/*">
+        <input type="file" id="avatarUpload" class="hidden-input" accept="image/*">
 
-            <!-- COVER -->
-            <div class="profile-cover">
-                <img id="coverImage"
-                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <!-- CROPPER MODAL (shared) -->
+        <div id="cropperModal" class="cropper-modal">
+            <div class="cropper-container">
+                <div class="cropper-header">
+                    <h3 id="modalTitle"><i class="fas fa-crop"></i> Crop image</h3>
+                    <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="image-preview-wrapper">
+                    <img id="cropImage" src="" alt="Crop preview">
+                </div>
+                <div class="cropper-actions">
+                    <button class="cancel-btn" id="cancelCropBtn"><i class="fas fa-ban"></i> Cancel</button>
+                    <button class="crop-btn" id="applyCropBtn"><i class="fas fa-check"></i> Apply crop</button>
+                </div>
+            </div>
+        </div>
 
-                <button class="edit-cover-btn" id="editCoverBtn">
-                    <i class="fa-regular fa-pen-to-square"></i>
+        <!-- PROFILE HEADER with AVATAR (background set via fetch) -->
+        <div class="profile-header-info">
+            <div class="avatar-frame">
+                <div class="avatar-img" id="avatarImg"></div>
+                <button class="avatar-corner-btn" id="avatarCornerBtn" title="Change & crop avatar">
+                    <i class="fas fa-crop"></i>
                 </button>
-
-                <input type="file" id="coverInput" hidden accept="image/*">
             </div>
-
-            <!-- BODY -->
-            <div class="profile-body">
-                <div class="profile-header">
-
-                    <!-- AVATAR -->
-                    <div class="avatar-wrapper">
-                        <div class="avatar">
-                            <img id="avatarImage" src="https://i.pravatar.cc/300">
-                        </div>
-
-                        <button class="edit-avatar-btn" id="editAvatarBtn">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                        </button>
-                        
-                        <input type="file" id="avatarInput" hidden accept="image/*">
-                    </div>
-                    
-                    <!-- INFO -->
-                    <div class="profile-info">
-                        <input id="nameInput" value="Henrie Ekemezie" disabled>
-                        <input id="roleInput" value="Web & UI/UX Designer" disabled>
-                        
-                        <textarea id="bioInput" rows="2" disabled>Passionate designer focused on clean user experiences.
-                        </textarea>
-                    </div>
-
-                    <!-- ACTIONS -->
-                    <div class="tools">
-                        <button id="editBtn">Edit Profile</button>
-                        <button id="saveBtn">Save</button>
-                    </div>
-                    
+            <div class="title-group">
+                <div class="name">
+                    Нуримухаммад Гофуржонов
+                    <i class="fas fa-badge-check" style="color: #1e88e5;"></i>
+                </div>
+                <div class="subheadline">
+                    You can call me NIKO
+                    <span><i class="fas fa-graduation-cap"></i> PDP University</span>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i> Ташкент, Ташкент, Узбекистан
+                    <span style="background:#ecf3fa; padding:4px 12px; border-radius:40px;">
+                        <i class="fas fa-address-card"></i> Контактные сведения
+                    </span>
                 </div>
             </div>
         </div>
-        
-        <div class="crop-modal" id="cropModal">
-            <div class="crop-box">
-                <div class="crop-main-container">
-                    <div class="img-container">
-                        <img id="cropImage">
-                    </div>
-                </div>
 
-        <div class="crop-actions">
-            <div class="zoom-controls" style="margin-right: auto;">
-                <button type="button" id="zoomIn" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
-                <button type="button" id="zoomOut" title="Zoom Out"><i class="fa-solid fa-minus"></i></button>
+        <!-- BIO / DETAILS -->
+        <div class="bio-content">
+            <div class="badge-verify">
+                <i class="fas fa-check-circle"></i> ДОБАВЬТЕ ЭМБЛЕМУ ПОДТВЕРЖДЕНИЯ
             </div>
-            <button id="cancelCrop">Cancel</button>
-            <button id="applyCrop">Apply</button>
+            <div class="description-text">
+                <i class="fas fa-quote-left" style="opacity:0.6;"></i>
+                Computer Science Student at PDP University | Aspiring Software Engineer | Passionate about Python, Java, Web Development, and AI | Exploring Data Science, Cloud Computing & Modern Software Solutions
+            </div>
+            <div class="university-block">
+                <div class="uni-logo-placeholder">PDP</div>
+                <div class="uni-detail">
+                    <strong>PDP University</strong>
+                    <small>Bachelor’s degree, Computer Science · 2023–2027</small>
+                </div>
+            </div>
+            <div style="margin-top:16px; color:#2b4e66; display:flex; gap:12px; align-items:center;">
+                <i class="fas fa-link"></i> Ташкент, Ташкент, Узбекистан · Контактные сведения 
+                <span style="background:#deebf2; padding:4px 12px; border-radius:50px;"><i class="fas fa-envelope"></i> niko@pdp.uz</span>
+            </div>
+            <div class="crop-function-bar">
+                <span><i class="fas fa-pen"></i> Corner buttons</span>
+                <span><i class="fas fa-crop"></i> Crop cover/avatar</span>
+                <span><i class="fas fa-database"></i> Fetch default images</span>
+            </div>
+            <p class="note-soft" id="fetchStatus">
+                <i class="fas fa-cloud-download-alt"></i> Loading default images via fetch...
+            </p>
         </div>
-            </div>
-        </div>       
-        <!-- ===== REGISTERED SESSIONS ===== -->
-        <section class="registered-sessions">
-            
-            <h3>Registered Sessions</h3>
-            
-            <div class="session-table">
-                
-                <div class="session-row header">
-                    <span>Name</span>
-                    <span>Time</span>
-                    <span>Status</span>
-                </div>
-
-                <div class="session-row">
-                    <span>Weekly mock test from English Life</span>
-                    <span>4 September 10:30</span>
-                    <div>
-                        <button class="btn-join">Join</button>
-                        <button class="btn-cancel">Cancel</button>
-                    </div>
-                </div>
-
-                <div class="session-row">
-                    <span>Mock test from English with TIM</span>
-                    <span>8 September 10:30</span>
-                    <div>
-                        <button class="btn-join">Join</button>
-                        <button class="btn-cancel">Cancel</button>
-                    </div>
-                </div>
-
-                <div class="session-row">
-                    <span>Weekly mock test from Webster</span>
-                    <span>12 September 10:30</span>
-                    <div>
-                        <button class="btn-join">Join</button>
-                        <button class="btn-cancel">Cancel</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
+    </div>
     
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
 <script src="../../assets/js/dashboard/profile.js"></script>
 </body>
 </html>
