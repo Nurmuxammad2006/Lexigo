@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup | LEXIGO</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-chart-line"></i> My Results</h2></div>
+            <nav class="sidebar-nav">
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="#" class="active"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+            </nav>
+        </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+        <section class="results-card">
+            <h2>My Results</h2>
+
+            <!-- ===== TOP STATS ===== -->
+            <div class="results-top">
+
+                <div class="average-score">
+                    <p>Average Band Score</p>
+                    <h1>6.0</h1>
+                </div>
+
+                <div class="score-chart">
+                    <canvas id="scoreChart"></canvas>
+                </div>
+
+            </div>
+
+            <!-- ===== HISTORY TABLE ===== -->
+            <h3>Scores History & Times</h3>
+
+            <div class="results-table">
+                <div class="results-row header">
+                    <span>Name</span>
+                    <span>Type</span>
+                    <span>Score</span>
+                    <span>Level</span>
+                </div>
+
+                <div class="results-row">
+                    <span>Weekly mock test from Cambridge</span>
+                    <span>IELTS</span>
+                    <span>6.5</span>
+                    <span>B2</span>
+                </div>
+
+                <div class="results-row">
+                    <span>Weekly mock test from Cambridge</span>
+                    <span>SEFR</span>
+                    <span>160</span>
+                    <span>B2</span>
+                </div>
+
+                <div class="results-row">
+                    <span>Weekly mock test from Cambridge</span>
+                    <span>IELTS</span>
+                    <span>7.0</span>
+                    <span>C1</span>
+                </div>
+
+                <div class="results-row">
+                    <span>Weekly mock test from Cambridge</span>
+                    <span>IELTS</span>
+                    <span>0.0</span>
+                    <span>NP</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

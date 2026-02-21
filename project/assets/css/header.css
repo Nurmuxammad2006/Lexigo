@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.56);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    color: #fff;
+}
+
+.header .container {
+    display: flex;
+    justify-content: center; /* center the nav horizontally */
+    align-items: center;
+    padding: 30px 20px;
+    position: relative;
+}
+.nav ul {
+    display: flex;
+    align-items: center;   /* IMPORTANT */
+    gap: 24px;
+    list-style: none;
+    color: rgb(251, 251, 251);
+    margin: 0;
+    padding: 0;
+
+    /* fonts */
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;   /* 👈 this is the THIN style */
+}
+
+.nav ul :hover {
+    color: chocolate;
+}
+
+.company-logo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff; /* your primary blue */
+    text-transform: uppercase;
+    cursor: pointer;
+
+    position: absolute; /* keep logo on left while header box is centered */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Place the nav back to the right (initial behavior) while keeping the header centered */
+.nav {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.nav .btn {
+    height: auto; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+}

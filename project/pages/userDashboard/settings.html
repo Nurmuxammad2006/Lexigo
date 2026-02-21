@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Startup</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-gear"></i> Settings</h2></div>
+            <nav class="sidebar-nav">
+                <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="#" class="active"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+            </nav>
+        </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+        <section class="settings-card">
+            <h2>Account Settings</h2>
+
+            <!-- EMAIL -->
+            <div class="setting-group">
+                <label>Email</label>
+                <input type="email" value="nurimuhammad7473@gmail.com" disabled>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="setting-group">
+                <label>Password</label>
+                <input type="password" value="********" disabled>
+            </div>
+
+            <!-- THEME -->
+            <div class="setting-group">
+                <label>Theme</label>
+                <div class="theme-toggle">
+                    <button id="lightTheme" class="active">Light</button>
+                    <button id="darkTheme">Dark</button>
+                </div>
+            </div>
+
+            <!-- CHANGE PASSWORD -->
+            <h3>Change Password</h3>
+
+            <div class="setting-group">
+                <label>New password</label>
+                <input type="password" id="newPassword" placeholder="New password">
+            </div>
+
+            <div class="setting-group">
+                <label>Confirm password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm password">
+            </div>
+
+            <button class="btn btn-primary">Update Password</button>
+
+            <!-- NOTIFICATIONS -->
+            <h3>Notifications</h3>
+
+            <div class="setting-toggle">
+                <span>Email notifications</span>
+                <input type="checkbox" checked>
+            </div>
+
+            <div class="setting-toggle">
+                <span>Session reminders</span>
+                <input type="checkbox" checked>
+            </div>
+
+            <!-- DELETE ACCOUNT -->
+            <div class="danger-zone">
+                <h3>Danger zone</h3>
+                <button class="btn btn-danger">Delete Account</button>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>
