@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #eef3fb;
+}

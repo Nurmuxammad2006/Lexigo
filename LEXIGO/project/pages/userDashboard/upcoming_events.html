@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | Startup</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
+    
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+    
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <div class="sidebar-logo"><h2>💬 Upcoming</h2></div>
+        <nav class="sidebar-nav">
+            <a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+            <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> My Result</a>
+            <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+            <a href="#" class="active"><i class="fa-solid fa-clock"></i> Upcoming</a>
+            <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+        </nav>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="dashboard-content">
+
+        <!-- SEARCH -->
+        <div class="event-search">
+            <input type="text" placeholder="Search IELTS events...">
+        </div>
+
+        <!-- FILTERS -->
+        <div class="event-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="live">Live</button>
+            <button class="filter-btn" data-filter="mock">Mock</button>
+            <button class="filter-btn" data-filter="registered">Registered</button>
+            <button class="filter-btn" data-filter="cancelled">Cancelled</button>
+        </div>
+
+        <!-- EVENTS LIST -->
+        <section class="event-list">
+
+            <div class="event-card" data-type="live" data-status="open">
+                <div class="event-image"></div>
+                <div class="event-info">
+                    <h4>IELTS Speaking – Live Group Session</h4>
+                    <p>Live speaking practice with instructor</p>
+                </div>
+                <button class="event-btn register">Register</button>
+            </div>
+
+            <div class="event-card active" data-type="mock" data-status="open">
+                <div class="event-image"></div>
+                <div class="event-info">
+                    <h4>IELTS Full Mock Exam</h4>
+                    <p>Timed exam with band score feedback</p>
+                </div>
+                <button class="event-btn register">Register</button>
+            </div>
+
+            <div class="event-card" data-type="live" data-status="cancelled">
+                <div class="event-image"></div>
+                <div class="event-info">
+                    <h4>IELTS Writing Task 2 Workshop</h4>
+                    <p>Essay structure & correction</p>
+                </div>
+                <button class="event-btn cancelled">Cancelled</button>
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

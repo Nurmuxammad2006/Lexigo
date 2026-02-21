@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Startup</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="../../assets/css/dashboard/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/sidebar.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/profile.css">
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/dashboard.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+     <!-- Crop JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
+
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo"><h2><i class="fa-solid fa-user"></i> Profile</h2></div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> My Result</a>
+                <a href="sessions.html"><i class="fa-solid fa-calendar"></i> Sessions</a>
+                <a href="upcoming_events.html"><i class="fa-solid fa-clock"></i> Upcoming</a>
+                <a href="chat.html"><i class="fa-solid fa-message"></i> Chat</a>
+                <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="../auth/login.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+            </nav>
+        </aside>
+
+    <!-- ===== MAIN CONTENT  Profile card ===== -->
+    <main class="dashboard-content">
+        <div class="profile-card" id="profileCard">
+
+            <!-- COVER (with corner crop) -->
+            <div class="cover-section" id="coverSection">
+                <button class="cover-corner-btn" id="coverCornerBtn" title="Change & crop cover">
+                    <i class="fas fa-pen"></i>
+                </button>
+            </div>
+
+            <!-- hidden file inputs for crop -->
+            <input type="file" id="coverUpload" class="hidden-input" accept="image/*">
+            <input type="file" id="avatarUpload" class="hidden-input" accept="image/*">
+
+            <!-- PROFILE HEADER with EDIT BUTTON -->
+            <div class="profile-header-info">
+                <div class="avatar-frame">
+                    <div class="avatar-img" id="avatarImg"></div>
+                    <button class="avatar-corner-btn" id="avatarCornerBtn" title="Change & crop avatar">
+                        <i class="fas fa-crop"></i>
+                    </button>
+                </div>
+                <div class="title-group">
+                    <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+                        <div class="name" id="displayName">
+                            Нуримухаммад Гофуржонов
+                            <i class="fas fa-badge-check" style="color: #1e88e5;"></i>
+                        </div>
+                        <button class="edit-profile-btn" id="editProfileBtn"><i class="fas fa-pen"></i> Edit profile</button>
+                    </div>
+                    <div class="subheadline" id="displayNickname">
+                        You can call me NIKO
+                        <span><i class="fas fa-graduation-cap"></i> <span id="displayUni">PDP University</span></span>
+                    </div>
+                    <div class="location" id="displayLocation">
+                        <i class="fas fa-map-marker-alt"></i> Ташкент, Ташкент, Узбекистан
+                        <span style="background:#ecf3fa; padding:4px 12px; border-radius:40px;">
+                            <i class="fas fa-address-card"></i> Контактные сведения
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BIO / DETAILS (editable fields displayed) -->
+            <div class="bio-content">
+                <div class="badge-verify">
+                    <i class="fas fa-check-circle"></i> ДОБАВЬТЕ ЭМБЛЕМУ ПОДТВЕРЖДЕНИЯ
+                </div>
+                <div class="description-text" id="displayBio">
+                    <i class="fas fa-quote-left" style="opacity:0.6;"></i>
+                    Computer Science Student at PDP University | Aspiring Software Engineer | Passionate about Python, Java, Web Development, and AI | Exploring Data Science, Cloud Computing & Modern Software Solutions
+                </div>
+                <div class="university-block">
+                    <div class="uni-logo-placeholder">PDP</div>
+                    <div class="uni-detail">
+                        <strong id="displayUniName">PDP University</strong>
+                        <small id="displayDegree">Bachelor’s degree, Computer Science · 2023–2027</small>
+                    </div>
+                </div>
+                <div style="margin-top:16px; color:#2b4e66; display:flex; gap:12px; align-items:center;">
+                    <i class="fas fa-link"></i> <span id="displayContact">Ташкент, Ташкент, Узбекистан · Контактные сведения</span>
+                    <span style="background:#deebf2; padding:4px 12px; border-radius:50px;"><i class="fas fa-envelope"></i> niko@pdp.uz</span>
+                </div>
+                <div class="crop-function-bar">
+                    <span><i class="fas fa-pen"></i> Corner buttons</span>
+                    <span><i class="fas fa-crop"></i> Crop cover/avatar</span>
+                    <span><i class="fas fa-database"></i> Fetch default images</span>
+                </div>
+                <p class="note-soft" id="fetchStatus">
+                    <i class="fas fa-cloud-download-alt"></i> Loading default images via fetch...
+                </p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div class="edit-modal-overlay" id="editModalOverlay">
+    <div class="edit-card">
+        <h2><i class="fas fa-user-edit"></i> Edit profile</h2>
+        <div class="edit-field">
+            <label>Full name</label>
+            <input type="text" id="editName" placeholder="e.g. Нуримухаммад Гофуржонов">
+        </div>
+        <div class="edit-field">
+            <label>Nickname / subtitle</label>
+            <input type="text" id="editNickname" placeholder="You can call me NIKO">
+        </div>
+        <div class="edit-field">
+            <label>University / Company</label>
+            <input type="text" id="editUni" placeholder="PDP University">
+        </div>
+        <div class="edit-field">
+            <label>Location</label>
+            <input type="text" id="editLocation" placeholder="Ташкент, Узбекистан">
+        </div>
+        <div class="edit-field">
+            <label>Bio / description</label>
+            <textarea id="editBio" rows="3" placeholder="Write something about yourself..."></textarea>
+        </div>
+        <div class="edit-actions">
+            <button class="cancel-edit-btn" id="cancelEditBtn"><i class="fas fa-times"></i> Cancel</button>
+            <button class="save-btn" id="saveEditBtn"><i class="fas fa-save"></i> Save changes</button>
+        </div>
+    </div>
+</div>
+
+<!-- CROPPER MODAL (shared) -->
+<div id="cropperModal" class="cropper-modal">
+    <div class="cropper-container">
+        <div class="cropper-header">
+            <h3 id="modalTitle"><i class="fas fa-crop"></i> Crop image</h3>
+            <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="image-preview-wrapper">
+            <img id="cropImage" src="" alt="Crop preview">
+        </div>
+        <div class="cropper-actions">
+            <button class="cancel-btn" id="cancelCropBtn"><i class="fas fa-ban"></i> Cancel</button>
+            <button class="crop-btn" id="applyCropBtn"><i class="fas fa-check"></i> Apply crop</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
+<script src="../../assets/js/dashboard/profile.js"></script>
+</body>
+</html>
