@@ -18,7 +18,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
-     <!-- Crop JavaScript -->
+    <!-- Crop JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css">
 
 </head>
@@ -40,85 +40,18 @@
             </nav>
         </aside>
 
-    <!-- ===== MAIN CONTENT  Profile card ===== -->
-    <main class="dashboard-content">
-        <div class="profile-card" id="profileCard">
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-profile-container">
+        <div class="profile-container">
 
-            <!-- COVER (with corner crop) -->
-            <div class="cover-section" id="coverSection">
-                <button class="cover-corner-btn" id="coverCornerBtn" title="Change & crop cover">
-                    <i class="fas fa-pen"></i>
-                </button>
-            </div>
-
-            <!-- hidden file inputs for crop -->
-            <input type="file" id="coverUpload" class="hidden-input" accept="image/*">
-            <input type="file" id="avatarUpload" class="hidden-input" accept="image/*">
-
-            <!-- PROFILE HEADER with EDIT BUTTON -->
-            <div class="profile-header-info">
-                <div class="avatar-frame">
-                    <div class="avatar-img" id="avatarImg"></div>
-                    <button class="avatar-corner-btn" id="avatarCornerBtn" title="Change & crop avatar">
-                        <i class="fas fa-crop"></i>
-                    </button>
-                </div>
-                <div class="title-group">
-                    <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-                        <div class="name" id="displayName">
-                            Нуримухаммад Гофуржонов
-                            <i class="fas fa-badge-check" style="color: #1e88e5;"></i>
-                        </div>
-                        <button class="edit-profile-btn" id="editProfileBtn"><i class="fas fa-pen"></i> Edit profile</button>
-                    </div>
-                    <div class="subheadline" id="displayNickname">
-                        You can call me NIKO
-                        <span><i class="fas fa-graduation-cap"></i> <span id="displayUni">PDP University</span></span>
-                    </div>
-                    <div class="location" id="displayLocation">
-                        <i class="fas fa-map-marker-alt"></i> Ташкент, Ташкент, Узбекистан
-                        <span style="background:#ecf3fa; padding:4px 12px; border-radius:40px;">
-                            <i class="fas fa-address-card"></i> Контактные сведения
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BIO / DETAILS (editable fields displayed) -->
-            <div class="bio-content">
-                <div class="badge-verify">
-                    <i class="fas fa-check-circle"></i> ДОБАВЬТЕ ЭМБЛЕМУ ПОДТВЕРЖДЕНИЯ
-                </div>
-                <div class="description-text" id="displayBio">
-                    <i class="fas fa-quote-left" style="opacity:0.6;"></i>
-                    Computer Science Student at PDP University | Aspiring Software Engineer | Passionate about Python, Java, Web Development, and AI | Exploring Data Science, Cloud Computing & Modern Software Solutions
-                </div>
-                <div class="university-block">
-                    <div class="uni-logo-placeholder">PDP</div>
-                    <div class="uni-detail">
-                        <strong id="displayUniName">PDP University</strong>
-                        <small id="displayDegree">Bachelor’s degree, Computer Science · 2023–2027</small>
-                    </div>
-                </div>
-                <div style="margin-top:16px; color:#2b4e66; display:flex; gap:12px; align-items:center;">
-                    <i class="fas fa-link"></i> <span id="displayContact">Ташкент, Ташкент, Узбекистан · Контактные сведения</span>
-                    <span style="background:#deebf2; padding:4px 12px; border-radius:50px;"><i class="fas fa-envelope"></i> niko@pdp.uz</span>
-                </div>
-                <div class="crop-function-bar">
-                    <span><i class="fas fa-pen"></i> Corner buttons</span>
-                    <span><i class="fas fa-crop"></i> Crop cover/avatar</span>
-                    <span><i class="fas fa-database"></i> Fetch default images</span>
-                </div>
-                <p class="note-soft" id="fetchStatus">
-                    <i class="fas fa-cloud-download-alt"></i> Loading default images via fetch...
-                </p>
-            </div>
         </div>
+
     </main>
+                
 </div>
 
 <!-- EDIT PROFILE MODAL -->
-<div class="edit-modal-overlay" id="editModalOverlay">
+<!-- <div class="edit-modal-overlay" id="editModalOverlay">
     <div class="edit-card">
         <h2><i class="fas fa-user-edit"></i> Edit profile</h2>
         <div class="edit-field">
@@ -146,10 +79,10 @@
             <button class="save-btn" id="saveEditBtn"><i class="fas fa-save"></i> Save changes</button>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- CROPPER MODAL (shared) -->
-<div id="cropperModal" class="cropper-modal">
+<!-- <div id="cropperModal" class="cropper-modal">
     <div class="cropper-container">
         <div class="cropper-header">
             <h3 id="modalTitle"><i class="fas fa-crop"></i> Crop image</h3>
@@ -163,7 +96,7 @@
             <button class="crop-btn" id="applyCropBtn"><i class="fas fa-check"></i> Apply crop</button>
         </div>
     </div>
-</div>
+</div> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.js"></script>
 <script src="../../assets/js/dashboard/profile.js"></script>

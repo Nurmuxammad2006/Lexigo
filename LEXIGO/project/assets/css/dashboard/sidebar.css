@@ -1,38 +1,109 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#333;height:100vh;overflow:hidden}
-.dashboard-layout{display:flex;height:100vh}
 
-.sidebar{
-    width:220px;
-    background:#1a1f2e;
-    color:#fff;
-    padding:24px 0;
-    flex-shrink:0
+.dashboard-layout {
+    display: flex;
+    align-items: center;
+    background-image: url(https://images.unsplash.com/photo-1698276573913-44fc2161bc4b?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    background-color: #292929; /* Changed from background to background-color */
+    padding: 20px;
 }
+
+.sidebar {
+    width: 240px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+    );
+}
+
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+    );
+}
+
 .sidebar-logo{
     padding:0 20px 24px;
     border-bottom:1px solid rgba(255,255,255,.1)
 }
+
 .sidebar-logo h2{
     font-size:1.3rem;
-    font-weight:700
+    font-weight:700;
+    color: #fff;
 }
+
 .sidebar-nav{
-    padding:16px 0
+    padding:16px 0;
+    border-radius: 0 20px 20px 0;
 }
+
 .sidebar-nav a{
     display:block;
     padding:12px 20px;
+    border-radius: 0 20px 20px 0;
     color:rgba(255,255,255,.7);
     text-decoration:none;
     font-size:.9rem;
     transition:all .2s
 }
+
 .sidebar-nav a:hover{
-    background:rgba(255,255,255,.05);
+    background:rgba(255, 255, 255, 0.3);
+    border-radius:20px;
     color:#fff
 }
+
 .sidebar-nav a.active{
-    background:#4a7cff;
-    color:#fff
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 0px 0px rgba(255, 255, 255, 0);
+    position: relative;
+    overflow: hidden;
 }
